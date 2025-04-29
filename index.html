@@ -4,113 +4,499 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TURNO DE ESTUDIO/</title>
-   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <title>TURNO DE ESTUDIO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #2980b9;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+            --sidebar-width: 280px;
+        }
 
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      min-height: 100vh;
-      flex-direction: row;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .sidebar {
-      width: 300px;
-      background-color: #f4f4f4;
-      padding: 20px;
-      border-right: 1px solid #ddd;
-      overflow-y: auto;
-      transition: all 0.3s ease;
-    }
+        body {
+            min-height: 100vh;
+            background-color: var(--background-color);
+            display: flex;
+            flex-direction: column;
+        }
 
-    .content-area {
-      flex: 1;
-      padding: 30px;
-      background-color: white;
-    }
+        .sidebar {
+            width: 100%;
+            background-color: white;
+            color: var(--text-color);
+            padding: 12px;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-    .course-section {
-      margin-bottom: 15px;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
+        .progress-container {
+            background-color: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-    .course-section:hover {
-      background-color: #e0e0e0;
-    }
+        .progress-container h3 {
+            margin-bottom: 8px;
+            font-size: 1em;
+            color: var(--primary-color);
+        }
 
-    .active-section {
-      background-color: #d4e6f1;
-      font-weight: bold;
-    }
+        .progress-bar {
+            height: 6px;
+            background: #eee;
+            border-radius: 3px;
+            margin-bottom: 8px;
+        }
 
-    .progress-bar {
-      margin-bottom: 20px;
-      padding: 10px;
-      background-color: #eee;
-      border-radius: 5px;
-      text-align: center;
-    }
+        .progress-fill {
+            height: 100%;
+            background: var(--secondary-color);
+            border-radius: 3px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
 
-    h1, h2 {
-      color: #2c3e50;
-      margin-bottom: 15px;
-    }
+        .course-section {
+            padding: 8px 10px;
+            margin: 4px 0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.85em;
+        }
 
-    p, ul, ol {
-      line-height: 1.6;
-      margin-bottom: 10px;
-    }
+        .course-section i {
+            width: 18px;
+            text-align: center;
+            color: var(--secondary-color);
+        }
 
-    ul {
-      list-style-type: disc;
-      padding-left: 40px;
-    }
+        .content-area {
+            flex: 1;
+            min-height: 100vh;
+            background-color: var(--background-color);
+        }
 
-    ol {
-      padding-left: 40px;
-    }
+        .welcome-container {
+            text-align: center;
+        }
 
-    img.img-center {
-      display: block;
-      margin: 20px auto;
-      max-width: 100%;
-      height: auto;
-    }
+        .welcome-title {
+            font-size: 1.6em;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+        }
 
-    /* --- RESPONSIVE --- */
-    @media (max-width: 768px) {
-      body {
-        flex-direction: column;
-      }
+        .welcome-subtitle {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
 
-      .sidebar {
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid #ddd;
-      }
+        .course-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
 
-      .content-area {
-        padding: 20px;
-      }
-    }
-  </style>
+        .course-card {
+            background: white;
+            border-radius: 10px;
+            padding: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        .course-card p {
+            color: #7f8c8d;
+            margin-bottom: 12px;
+            font-size: 0.8em;
+            line-height: 1.4;
+        }
+
+        .course-card .icon {
+            font-size: 1.3em;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+        }
+
+        .course-card .btn,
+        .course-card .quiz-btn {
+            display: inline-block;
+            padding: 7px 12px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.8em;
+            transition: background 0.3s ease;
+        }
+
+        @media (min-width: 481px) {
+            .welcome-title {
+                font-size: 1.8em;
+                margin-bottom: 15px;
+            }
+            .welcome-subtitle {
+                font-size: 0.95em;
+                margin-bottom: 25px;
+            }
+            .course-card {
+                padding: 15px;
+            }
+            .course-card h3 {
+                font-size: 1.1em;
+                margin-bottom: 10px;
+            }
+            .course-card p {
+                font-size: 0.85em;
+                margin-bottom: 15px;
+            }
+            .course-card .icon {
+                font-size: 1.5em;
+                margin-bottom: 10px;
+            }
+            .course-card .btn,
+            .course-card .quiz-btn {
+                padding: 8px 15px;
+                font-size: 0.85em;
+            }
+            .progress-container {
+                padding: 15px;
+            }
+            .course-section {
+                padding: 10px 12px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (min-width: 769px) {
+            body {
+                flex-direction: row;
+            }
+            .sidebar {
+                width: 250px;
+                height: 100vh;
+                position: fixed;
+                padding: 15px;
+            }
+            .content-area {
+                margin-left: 250px;
+            }
+            .welcome-title {
+                font-size: 2em;
+                margin-bottom: 20px;
+            }
+            .welcome-subtitle {
+                font-size: 1em;
+                margin-bottom: 30px;
+            }
+            .course-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 20px;
+                margin-top: 30px;
+            }
+            .course-card {
+                padding: 20px;
+            }
+            .course-card h3 {
+                font-size: 1.2em;
+                margin-bottom: 12px;
+            }
+            .course-card p {
+                font-size: 0.9em;
+                margin-bottom: 20px;
+            }
+            .course-card .icon {
+                font-size: 1.8em;
+                margin-bottom: 15px;
+            }
+            .course-card .btn,
+            .course-card .quiz-btn {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .sidebar {
+                width: 280px;
+            }
+            .content-area {
+                margin-left: 280px;
+            }
+            .welcome-title {
+                font-size: 2.2em;
+            }
+            .welcome-subtitle {
+                font-size: 1.1em;
+            }
+            .course-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+            }
+            .course-card h3 {
+                font-size: 1.3em;
+            }
+        }
+
+        #section-content {
+            min-height: 100vh;
+        }
+
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 250px;
+            }
+            .content-area {
+                margin-left: 250px;
+            }
+            .welcome-title {
+                font-size: 2em;
+            }
+            .welcome-subtitle {
+                font-size: 1em;
+            }
+            .course-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+            .course-card {
+                padding: 20px;
+            }
+            .course-card h3 {
+                font-size: 1.2em;
+            }
+            .course-card p {
+                font-size: 0.9em;
+            }
+            .course-card .icon {
+                font-size: 1.8em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 15px;
+            }
+            .content-area {
+                margin-left: 0;
+                padding: 15px;
+            }
+            .welcome-title {
+                font-size: 1.8em;
+                margin-bottom: 15px;
+            }
+            .welcome-subtitle {
+                font-size: 0.95em;
+                margin-bottom: 25px;
+            }
+            .course-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                margin-top: 25px;
+            }
+            .course-card {
+                padding: 15px;
+            }
+            .course-card h3 {
+                font-size: 1.1em;
+                margin-bottom: 10px;
+            }
+            .course-card p {
+                font-size: 0.85em;
+                margin-bottom: 15px;
+            }
+            .course-card .icon {
+                font-size: 1.5em;
+                margin-bottom: 10px;
+            }
+            .course-card .btn,
+            .course-card .quiz-btn {
+                padding: 8px 15px;
+                font-size: 0.85em;
+            }
+            .progress-container {
+                padding: 15px;
+            }
+            .course-section {
+                padding: 10px 12px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .welcome-title {
+                font-size: 1.6em;
+                margin-bottom: 12px;
+            }
+            .welcome-subtitle {
+                font-size: 0.9em;
+                margin-bottom: 20px;
+            }
+            .course-card {
+                padding: 12px;
+            }
+            .course-card h3 {
+                font-size: 1em;
+                margin-bottom: 8px;
+            }
+            .course-card p {
+                font-size: 0.8em;
+                margin-bottom: 12px;
+            }
+            .course-card .icon {
+                font-size: 1.3em;
+                margin-bottom: 8px;
+            }
+            .course-card .btn,
+            .course-card .quiz-btn {
+                padding: 7px 12px;
+                font-size: 0.8em;
+            }
+            .progress-container {
+                padding: 12px;
+            }
+            .course-section {
+                padding: 8px 10px;
+                font-size: 0.85em;
+            }
+            .progress-container h3 {
+                font-size: 1em;
+            }
+        }
+
+        .welcome-container {    
+            margin: 0 auto;
+            text-align: center;
+        }
+        .welcome-title {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .welcome-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+        }
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .course-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .course-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        .course-card p {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .course-card .icon {
+            font-size: 2em;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+        .course-card .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .course-card .btn:hover {
+            background: #2980b9;
+        }
+        .course-card .quiz-btn {
+            position: absolute;
+            bottom: 25px;
+            right: 25px;
+            background: #2ecc71;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        .course-card .quiz-btn:hover {
+            background: #27ae60;
+        }
+    </style>
 </head>
 
 <body>
     <nav class="sidebar">
-        <div class="progress-bar">
-            Progreso: 100% | Nota: 0/100
+
+        <div class="course-section active-section" data-section="welcome">
+            <i class="fas fa-home"></i>
+            Inicio
         </div>
-        <div class="course-section" data-section="Sondaje">Sondaje vesical masculino <br> y femenino</div>
-        <div class="course-section" data-section="instalacion">Cateterismo venoso periferico</div>
+        <div class="course-section" data-section="sondaje">
+            <i class="fas fa-procedures"></i>
+            Sondaje vesical masculino y femenino
+        </div>
+        <div class="course-section" data-section="cateterismo">
+            <i class="fas fa-syringe"></i>
+            Cateterismo venoso periférico
+        </div>
+        <div class="course-section" onclick="window.location.href='quiz-sondaje.html'">
+            <i class="fas fa-question-circle"></i>
+            Quiz Sondaje Vesical
+        </div>
+        <div class="course-section" onclick="window.location.href='quiz-cateterismo.html'">
+            <i class="fas fa-question-circle"></i>
+            Quiz Cateterismo
+        </div>
     </nav>
 
     <main class="content-area">
@@ -119,234 +505,11 @@
         </div>
     </main>
 
-    <script>
-        const sectionContent = {
-            welcome: `
-          <h1 style="text-align: center; font-size: 48px;">FACULTAD DE CIENCIAS EN LA EDUCACIÒN Y EN LA SALUD.</h1>
-          <img 
-          src="https://unisangil.edu.co/wp-content/uploads/2023/12/not-renov_enf_1.jpg" 
-          style="display: block; margin: 0 auto; width: 400px;">
-          <h1 style="text-align: center; font-size: 48px;">ENFERMERIA.</h1>
-          <h1 style="text-align: center; font-size: 48px;">UNISANGIL.</h1>
-          <img 
-          src="https://www.unisangil.edu.co/wp-content/uploads/imagenes/logo_unisangil_vertical.png" 
-          style="display: block; margin: 0 auto; width: 125px;">
-         `,
-            Sondaje: `
-                <h2>DEFINICIÓN:</h2>
-                     <p>El sondaje vesical es un procedimiento que consiste en la introducción de catéteres flexibles en la vejiga a 
-                     través del orificio uretral para evacuar el contenido de la orina. El sondaje vesical se divide en: 
-                     intermitente en el cual se introduce una sonda nelatón para evacuar la vejiga o tomar muestra estéril y 
-                     se retira; o a permanencia donde se introduce una sonda Foley y se deja fija por un tiempo determinado.
-                    <div style="display: flex; justify-content: center; gap: 20px;">
-                    <img src="https://www.shendoow.com/uploads/allimg/18/shen-jie-shi-shu-niao-guan-jing-zhi-liao.jpg" alt="Imagen 1" width="200">
-                    <img src="https://www.shutterstock.com/image-vector/urine-bag-medical-treatment-drainage-600nw-1011930448.jpg" alt="Imagen 2" width="200">
-                    </div>
-                 <h2>TIPOS DE SONDAJE:</h2>
-                     <p>SONDAS NELATON: Son las más simples, muy útiles para los auto-sondeos uretrovesicales. 
-                     Hay algunas en materiales blandos que producen poco trauma y hay confeccionadas expresamente con materiales semirrígidos. 
-                     Son útiles para vencer obstáculos en la vía urinaria, pero deben ser empleadas solo por personas entrenadas. 
-                     Con gran facilidad crean falsas vías en la uretra, que es muy frágil. 
-                     El sondeo vesical en pacientes con dificultad para vaciar la vejiga en un postoperatorio debe ser hecho con sondas No 16 ó 18 y blandas. 
-                     Las sondas más finas dañan la uretra.</p>
-                     <img 
-                     src="https://th.bing.com/th/id/OIP.eJp3N1yoJVB5ZqZPiVAwIgHaHa?rs=1&pid=ImgDetMain" 
-                    style="display: block; margin: 0 auto; width: 400px;">
-                     
-                <p>SONDAS FOLEY: lleva un balón, conducto fino y una válvula que permite inflar este balón y hacer de autocontención en la vejiga.
-                     Es la más empleada e imprescindible cuando se desea dejar por un tiempo prolongado.
-                      Existen de goma corriente para los usos poco prolongados hasta las de silicona que permite que permanezca sin necesidad de cambio hasta 8 semanas. 
-                      También las hay en materiales semirrígidos para aquellos casos en que haya dificultad en el pasaje o para en casos en que se quiera extraer coágulos sin que la sonda se colapse. 
-                      Existe otro modelo muy usado en que se agrega otra vía una tercera, que permite irrigar la vejiga con suero fisiológico. Muy utilizada en la cirugía prostática, existiendo variedades con balones de 15cc, 30cc y hasta 100 cc para casos extremos. 
-                      Su utilidad está en irrigar la vejiga impidiendo que la sangre coagule y obstruya la sonda.</p>
-                      <img 
-                     src="https://th.bing.com/th/id/OIP.FrfEok4LrtXnGFpO3bMBmgHaFj?rs=1&pid=ImgDetMain" 
-                    style="display: block; margin: 0 auto; width: 400px;">
-               <h2>CATETERISMO VESICAL INTERMITENTE:</h2>
-                <ol>
-                    <li>Facilita el automatismo vesical durante el periodo de reducción vesical, al mismo tiempo que para comprobar el vaciado correcto de la vejiga o medir el residuo postmiccional.</li>
-                    <li>Como mecanismo de eliminación vesical definitiva, practicada por el propio paciente, como técnica que le proporciona mayor independencia.</li>
-                    <li>Como medida de emergencia en caso de complicaciones (infección urinaria, retenciones de orina, etc.).</li>
-                    </ol>
-                <h2>INDICACIONES:</h2>
-                <p>CON FINES DAGNOSTICOS.<p>
-                <ol>
-                     <li>Obtención de muestras para uroanálisis.</li>
-                     <li>Realización de cistografía.</li>
-                     <li>Relación de estudios urodinámicos.</li>
-                     </ol>
-                <h2>FINES TERAPEUTICOS.</h2>
-                    <ol>
-                     <li>Evaluar estado hemodinámico en personas en shock.</li>
-                     <li>Medición de orina residual (control de líquidos).</li>
-                     <li>Drenaje vesical en casos de retención urinaria.</li>
-                     <li>Cuantificación exacta de la diuresis cuando así se requiera.</li>
-                     <li>Permitir la cicatrización de vías urinarias tras la cirugía.</li>
-                     </ol>
-                <h2>CONTRAINDICACIONES.</h2>
-                    <ol>
-                     <li>Incontinencia urinaria: utilización prioritaria de reeducación vesical, colectores, pañales.</li>
-                     <li>Lesiones uretrales (estenosis, fístulas).</li>
-                     <li>Traumatismos uretrales (doble vía, etc.).</li>
-                     <li>Cirugía reciente de la uretra o del cuello de la vejiga.</li>
-                     </ol>
-                <h2>PROCESOS INTERRELACIONADOS.</h2>
-                    <ul>
-                     <li>Protocolo de lavado de manos.</li>
-                     <li>Protocolo de baño genital externo.</li>
-                     <li>Normas universales de bioseguridad.</li>
-                     <li>Clasificación de residuos de riesgo biológico.</li>
-                     <li>Protocolo de registros de enfermería..</li>
-                     <li>Protocolo de muestras de laboratorio.</li>
-                     </ul>
-                <h2>PRECAUCIONES.</h2>
-                    <ul>
-                     <li>Nunca se de forzar la sonda si encuentra resistencia al introducirla.</li>
-                     <li>Si la sonda se introduce por la vagina deséchela y use otra nueva.</li>
-                     <li>En los hombres no olvide descender el prepucio para evitar la aparición del edema.</li>
-                     <li>Mantener la bolsa recolectora de orina o cistoflo por debajo del nivel de la vejiga nunca debe tener contacto con el piso.</li>
-                     <li>Rotule la muestra con el nombre del paciente fecha y servicio.</li>
-                     <li>Rótula el cystoflo con los datos solicitados en el mismo.</li>
-                     <li>Realice higiene el meato urinario dos veces al día.</li>
-                     </ul>
-                <h1>COMPLICACIONES.</h1>
-                    <ul>
-                    <li>Infección: Se presenta por una mala asepsia durante el procedimiento o por contaminación del sistema de drenaje, 
-                        por infección preexistente, trama uretral o cateterismo prolongado.
-                        Se previene con una adecuada técnica, evitando la tensión continua de la sonda o su manipulación frecuente.</li>
-                    <li>Estenosis uretral: Ocurre por cateterismos prolongados, traumáticos o por uretritis crónica.</li>
-                    <li>Trauma uretral: Producido por el uso de sondas de mayor calibre al permitido por el diámetro de la uretra, 
-                        o al retirar la sonda con el balón insuflado, se asocia a hematuria.</li>
-                    <li>Falsa ruta: Se presenta por aplicar demasiada presión al pasar la sonda a través estenosis uretrales.</li>
-                    <li>Hematuria: Se presenta en procedimientos traumáticos patología vesiculouretral
-                         preexiste o por descompresión súbita de grandes volúmenes urinarios.</li>
-                    </ul>
-                <h2>BIBLIOGRAFIAS.</h2>
-                    <ul>
-                    <li>CAMACHO MATIZ Hernando, CIFUENTES AYA Claudia, TORRES NAVAS Adriana. 
-                        Simulación cibernética en la enseñanza de las ciencias de la salud. Kimpres. Bogotá, Colombia; 2005.Pag 82-85.</li>
-                    <li>REICHMAN Eric, SIMON Robert. Urgencias/ Emergencia. Marban. Madrid, España; 2006. Pag 1123 - 1125.</li>
-                    <li>CHOCARRO GONZALEZ Louders, VENTURINI MEDINA Carmen. Procedimientos y cuidados en Enfermería Médico – 
-                        Quirúrgicas. ELSVIER. Madrid, España; 2006 Pag 119 -125..</li>
-                    <li>HERDMAN Heather, SCROGGINS Leann, VASSALLO Barbara. Diagnósticos enfermeros: definiciones y diagnósticos. ELSVIER. Madrid, España; 2007.Pag 103,219.</li>
-                    <li>MCCLOSKEY DOCHTERMAN Joanne, BULECHEK Gloria. Clasificación de intervenciones de enfermería (NIC). ELSVIER. Madrid, España. Pag. 731.</li>
-                    <li>AMADO MENDOZA Myriam. Protocolos enfermería subgerencia servicio de enfermería. Litografía Claudia. Bucaramanga, Colombia. 2007. Pag 68.</li>
-                    <li>Fundación cardiovascular de Colombia. (2019) Cateterismo Vesical.</li>
-                    </ul>
-                
-            `,
-            instalacion: `
-                <h2>DEFINICIÒN</h2>
-                <p>Es la inserción de un catéter con técnica aséptica, en una vena periférica del sistema circulatorio,
-                     Los vasos más adecuados para la venopunción son: el plexo venoso dorsal y venas metacarpianas dorsales de la mano, 
-                     vena cefálica, vena basílica y vena mediana del brazo.</p>
-                    <img 
-                     src="https://enfermeriabuenosaires.com/wp-content/uploads/2018/09/CDR774009-750.jpg" 
-                    style="display: block; margin: 0 auto; width: 400px;">
-                <h2>INDICACIONES</h2>
-                <ul>
-                    <li>Administración fármacos y sustancias con fines terapéuticos.</li>
-                    <li>Administrar sangre y hemoderivados.</li>
-                    <li>Restaurar y mantener el volumen circulatorio y el balance hidroelectrolítico.</li>
-                    <li>Suplir el déficit nutricional.</li>
-                    <li>Reposición de líquidos y electrolitos.</li>
-                    <li>Obtención de muestras de sangre.</li>
-                    <li>Mantenimiento de acceso venoso permeable para casos de emergencia.</li>
-                    <li>Realización de estudios diagnósticos.</li>
-                    </ul>
-                <h2>CONTRAINDICACIONES</h2>
-                <ul>
-                    <li>Presencia de infección local en el sitio de la punción.</li>
-                    <li>Presencia de flebitis en el sitio de la punción.</li>
-                    <li>Dificultad sensitiva y motora.</li>
-                    <li>Fístula arterio-venosa.</li>
-                    <li>Exploración axilar por mastectomía radical.</li>
-                    <li>Alteraciones locales de la piel: edema, dolor, sensibilidad, equimosis, infección.</li>
-                    </ul>
-                <h2>PRECAUCIONES</h2>
-                <ul>
-                    <li>Tener en cuenta el tipo de solución a administrar (quimioterapia, concentrados de hematíes, soluciones irritantes, etc.) 
-                        para la elección de la vía y el calibre del catéter.</li>
-                    <li>Como norma general debe seleccionarse el catéter de calibre más pequeño, según el tipo de terapia a administrar, para evitar la flebitis mecánica.</li>
-                    <li>Deben seleccionarse venas con buen flujo sanguíneo cuando vayan a infundirse soluciones hipertónicas o soluciones que contengan fármacos irritantes;
-                         estos fármacos incluyen antibióticos cómo cefalosporinas, metronidazol, vancomicina y eritromicina..</li>
-                    <li>Valorar la actividad del paciente, movilidad, agitación, alteración del nivel de conciencia, eligiendo la zona más adecuada.</li>
-                    <li>Realizar la inserción del catéter preferentemente en las extremidades superiores, evitando zonas de flexión y si es posible en el brazo no dominante.</li>
-                    <li>Si es posible, elegir para la inserción las venas distales. Evitar la inserción en extremidades edematosas o incapacitadas,
-                         en zonas con heridas, quemaduras, inflamaciones, infiltraciones previas o en venas esclerosadas..</li>
-                    <li>No rasurar la zona porque puede causar abrasión, en lugar de esto cortar el vello con una tijera si es necesario.</li>
-                    <li>No tardar más de 25 minutos desde la primera punción para canalizar vía venosa.</li>
-                    <li>En caso de apósito transparente semipermeable se debe cambiar siempre que este sucio, 
-                        deteriorado o húmedo, en caso de sangrado o supuración utilizar un apósito de gasa.</li>
-                    <li>Evaluar el catéter y el sitio de inserción para detectar áreas de enrojecimiento, sensibilidad mediante la inspección visual, palpación y la percepción de paciente.</li>
-                    <li>No fijar con demasiada presión el inmovilizador.</li>
-                    <li>Mantener la asepsia y antisepsia durante todo el procedimiento.</li>
-                    </ul>
-                <h2>PROCESOS INTERRELACIONADOS</h2>
-                <ul>
-                    <li>Protocolo de lavado de manos.</li>
-                    <li>Protocolo de manejo de líquidos y electrolitos.</li>
-                    <li>Normas universales de bioseguridad.</li>
-                    <li>Clasificación inicial de residuos de riesgo biológico.</li>
-                    <li>Protocolo de registros de enfermería.</li>
-                    <li>Protocolo de administración de medicamentos.</li>
-                    <li>Protocolo de transfusiones sanguíneas.</li>
-                    </ul>
-                <h2>COMPLICACIONES</h2>
-                <ul>
-                    <li>Infiltración.</li>
-                    <li>Extravasación.</li>
-                    <li>Trombosis</li>
-                    <li>Tromboflebitis.</li>
-                    <li>Flebitis nosocomial.</li>
-                    <li>Flebitis mecánica.</li>
-                    <li>Flebitis química.</li>
-                    <li>Flebitis bacteriana.</li>
-                    <li>Infección.</li>
-                    <li>Hematomas.</li>
-                    <li>Obstrucción del catéter.</li>
-                    <li>Disconfort (cambio en la localización catéter, limitación de movimiento).</li>
-                    <li>Síndrome compartimental.</li>
-                    </ul>
-                <h2>BIBLIOGRAFIAS</h2>
-                <ul>
-                    <li>GOMEZ R, Roció. Protocolo Cateterismo Venoso Periférico. ESE Hospital Universitario de Santander. Bucaramanga: Escuela de Enfermería.UIS, 2007..</li>
-                    <li>DIAZ. M. Guía de Manejo Venopuncion. Sociedad Medico Quirúrgica la Cien. S.A. SantaFe de Bogotá D.C.</li>
-                    <li>ACOFAEN, El profesional de Enfermería en la vigilancia epidemiológica de las infecciones intrahospitalarias, 1998.</li>
-                    <li>SECRETARÍA DISTRITAL DE SALUD DE BOGOTÁ. Guía para la prevención, control y vigilancia epidemiológica de infecciones intrahospitalarias: 
-                        3 dispositivos intravasculares. Bogotá, Colombia 2004..</li>
-                    <li>Hospital General Universitario Gregorio Marañón. (2014). Manejo de catéteres venosos periféricos. Disponible en:
-                    https://goo.su/iElz</li>
-                    <li>Fundación cardiovascular de Colombia. (2019) Guía de Venopuncion periférica..</li>
-                    </ul>
-                    
-                    
-            `,
-        };
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
 
-        // Función para cargar el contenido
-        function loadContent(section) {
-            const contentArea = document.getElementById('section-content');
-            contentArea.innerHTML = sectionContent[section];
-
-            // Actualizar clases activas
-            document.querySelectorAll('.course-section').forEach(item => {
-                item.classList.remove('active-section');
-            });
-            event.target.classList.add('active-section');
-        }
-
-        // Event listeners para las secciones
-        document.querySelectorAll('.course-section').forEach(item => {
-            item.addEventListener('click', function (e) {
-                const section = this.dataset.section;
-                loadContent(section);
-            });
-        });
-
-        // Cargar contenido inicial
-        loadContent('welcome');
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

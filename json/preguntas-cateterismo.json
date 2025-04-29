@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "pregunta": "1. ¿Cuáles son las clases de líquidos a infundir por vía endovenosa según su osmolaridad?",
+    "opciones": [
+      { "texto": "Isoosmolares (lactato de Ringer, SSN, DAD 5%), hipoosmolares (DAD 2.5%, solución 0.45%) e hiperosmolares (dextrosa 10%, solución 3%, dextrosa 25-50%)", "correcta": true },
+      { "texto": "Soluciones ácidas, neutras y alcalinas según el pH sanguíneo del paciente", "correcta": false },
+      { "texto": "Soluciones de bajo, medio y alto costo según el presupuesto hospitalario", "correcta": false },
+      { "texto": "Soluciones de primera, segunda y tercera generación según su fecha de fabricación", "correcta": false }
+    ]
+  },
+  {
+    "id": 2,
+    "pregunta": "2. Si un paciente tiene edema cerebral, ¿qué tipo de solución se administra según la osmolaridad?",
+    "opciones": [
+      { "texto": "Solución al 3% (hiperosmolar)", "correcta": true },
+      { "texto": "Dextrosa al 2.5% (hipoosmolar)", "correcta": false },
+      { "texto": "Lactato de Ringer (isoosmolar)", "correcta": false },
+      { "texto": "Solución salina al 0.45% (hipoosmolar)", "correcta": false }
+    ]
+  },
+  {
+    "id": 3,
+    "pregunta": "3. ¿Cuáles son los cuidados para el paso de una solución hiperosmolar?",
+    "opciones": [
+      { "texto": "Pasar por vía central, usar bomba de infusión, vigilar permeabilidad de la vía y niveles de electrolitos", "correcta": true },
+      { "texto": "Administrar siempre por vía periférica y a máxima velocidad para asegurar absorción", "correcta": false },
+      { "texto": "Mantener al paciente en decúbito lateral y suspender otros medicamentos durante la infusión", "correcta": false },
+      { "texto": "Diluir la solución al 50% con agua destilada antes de su administración", "correcta": false }
+    ]
+  },
+  {
+    "id": 4,
+    "pregunta": "4. ¿Cuáles son las indicaciones para la colocación de una vía intravenosa?",
+    "opciones": [
+      { "texto": "Toma de muestras, transfusiones, procedimientos quirúrgicos, control de líquidos y electrolitos, hidratación y nutrición parenteral", "correcta": true },
+      { "texto": "Exclusivamente para pacientes con obesidad mórbida o en estado de coma", "correcta": false },
+      { "texto": "Solo cuando la administración oral de medicamentos está contraindicada por náuseas severas", "correcta": false },
+      { "texto": "Únicamente en casos de emergencia hipertensiva o cuando el paciente lo solicite expresamente", "correcta": false }
+    ]
+  },
+  {
+    "id": 5,
+    "pregunta": "5. ¿Cuáles son los principales tipos de soluciones intravenosas y su clasificación?",
+    "opciones": [
+      { "texto": "Cristaloides (solución salina, Ringer lactato, solución glucosada) y coloides (albúmina, dextranos, hidroxietilalmidón)", "correcta": true },
+      { "texto": "Soluciones acuosas y oleosas según su capacidad de disolución en agua", "correcta": false },
+      { "texto": "Soluciones antimicrobianas, anticoagulantes y antieméticas según su función farmacológica", "correcta": false },
+      { "texto": "Soluciones de emergencia, mantenimiento y específicas según el contexto clínico", "correcta": false }
+    ]
+  },
+  {
+    "id": 6,
+    "pregunta": "6. ¿Cómo se calcula la velocidad de infusión de un suero intravenoso?",
+    "opciones": [
+      { "texto": "Gotas por minuto = (Volumen (mL) × Factor de goteo) / Tiempo (minutos)", "correcta": true },
+      { "texto": "Gotas por minuto = Peso del paciente en kg multiplicado por 2", "correcta": false },
+      { "texto": "Gotas por minuto = Volumen total dividido entre la edad del paciente", "correcta": false },
+      { "texto": "Gotas por minuto = Constante universal de 21 gotas para todos los pacientes adultos", "correcta": false }
+    ]
+  },
+  {
+    "id": 7,
+    "pregunta": "7. ¿Cuáles son los tipos de flebitis que pueden presentarse?",
+    "opciones": [
+      { "texto": "Química, mecánica y bacteriana o infecciosa", "correcta": true },
+      { "texto": "Aguda, subaguda y crónica según su tiempo de evolución", "correcta": false },
+      { "texto": "Leve, moderada y severa según la intensidad del dolor", "correcta": false },
+      { "texto": "Traumática, iatrogénica y espontánea según su origen", "correcta": false }
+    ]
+  },
+  {
+    "id": 8,
+    "pregunta": "8. ¿Cuáles son las principales complicaciones de la venopunción?",
+    "opciones": [
+      { "texto": "Flebitis, trombosis, extravasación, infección local o sistémica, hematoma y embolia aérea", "correcta": true },
+      { "texto": "Hipoglucemia, hipercalemia y hiponatremia en todos los casos", "correcta": false },
+      { "texto": "Necrosis tisular generalizada y tromboembolismo pulmonar masivo", "correcta": false },
+      { "texto": "Pérdida de la extremidad y shock anafiláctico en el 50% de los pacientes", "correcta": false }
+    ]
+  },
+  {
+    "id": 9,
+    "pregunta": "9. ¿Cómo se maneja una extravasación de líquidos intravenosos?",
+    "opciones": [
+      { "texto": "Suspender la infusión, elevar la extremidad, aplicar compresas según el tipo de solución y evaluar tratamiento adicional", "correcta": true },
+      { "texto": "Aumentar la velocidad de infusión para diluir el medicamento extravasado", "correcta": false },
+      { "texto": "Aplicar presión directa sobre la zona por al menos 30 minutos continuos", "correcta": false },
+      { "texto": "Realizar una incisión quirúrgica inmediata para drenar el líquido extravasado", "correcta": false }
+    ]
+  },
+  {
+    "id": 10,
+    "pregunta": "10. ¿Qué signos clínicos pueden indicar una flebitis en un paciente con acceso venoso?",
+    "opciones": [
+      { "texto": "Dolor, enrojecimiento, calor e induración a lo largo de la vena", "correcta": true },
+      { "texto": "Palidez extrema, hipotermia local y ausencia de dolor en la zona", "correcta": false },
+      { "texto": "Fiebre alta, convulsiones y cambios en el estado mental", "correcta": false },
+      { "texto": "Coloración azulada de la extremidad y pérdida súbita de la movilidad", "correcta": false }
+    ]
+  },
+  {
+    "id": 11,
+    "pregunta": "11. ¿Cómo se previene la infección en un acceso venoso periférico?",
+    "opciones": [
+      { "texto": "Lavado de manos, técnica aséptica, cambio regular de apósitos y evaluación frecuente del sitio", "correcta": true },
+      { "texto": "Uso exclusivo de vendajes húmedos y administración preventiva de antibióticos", "correcta": false },
+      { "texto": "Cambio del catéter venoso cada 8 horas independientemente de su estado", "correcta": false },
+      { "texto": "Cubrir completamente el sitio de inserción con vendaje oclusivo permanente", "correcta": false }
+    ]
+  },
+  {
+    "id": 12,
+    "pregunta": "12. ¿Qué es un control de líquidos positivo y uno negativo?",
+    "opciones": [
+      { "texto": "Control positivo: ingresos mayores que egresos. Control negativo: egresos mayores que ingresos (LA-LE)", "correcta": true },
+      { "texto": "Control positivo: presencia de infección. Control negativo: ausencia de infección", "correcta": false },
+      { "texto": "Control positivo: paciente consciente. Control negativo: paciente inconsciente", "correcta": false },
+      { "texto": "Control positivo: balance hídrico mayor a 3 litros. Control negativo: balance menor a 1 litro", "correcta": false }
+    ]
+  },
+  {
+    "id": 13,
+    "pregunta": "13. Si usted va a canalizar un recién nacido, ¿qué calibre de bránula utiliza?",
+    "opciones": [
+      { "texto": "24", "correcta": true },
+      { "texto": "18", "correcta": false },
+      { "texto": "16", "correcta": false },
+      { "texto": "14", "correcta": false }
+    ]
+  },
+  {
+    "id": 14,
+    "pregunta": "14. Indique los valores normales de sodio y potasio en sangre",
+    "opciones": [
+      { "texto": "Sodio: 135-145 mEq/L, Potasio: 3.5-4.5 mEq/L", "correcta": true },
+      { "texto": "Sodio: 100-120 mEq/L, Potasio: 5.5-6.5 mEq/L", "correcta": false },
+      { "texto": "Sodio: 150-170 mEq/L, Potasio: 2.0-3.0 mEq/L", "correcta": false },
+      { "texto": "Sodio: 120-130 mEq/L, Potasio: 6.0-7.0 mEq/L", "correcta": false }
+    ]
+  },
+  {
+    "id": 15,
+    "pregunta": "15. ¿Cuál es la constante de infusión para un equipo de transfusión de sangre y para un equipo de macrogoteo?",
+    "opciones": [
+      { "texto": "Transfusión: 10, Macrogoteo: 20", "correcta": false },
+      { "texto": "Transfusión: 4, Macrogoteo: 6", "correcta": true },
+      { "texto": "Transfusión: 15, Macrogoteo: 30", "correcta": false },
+      { "texto": "Transfusión: 2, Macrogoteo: 12", "correcta": false }
+    ]
+  },
+  {
+    "id": 16,
+    "pregunta": "16. Mencione 4 cuidados de enfermería que se tienen después de la instalación de una venoclisis",
+    "opciones": [
+      { "texto": "Revisar fijación, fecha de cambio, signos de flebitis y funcionamiento adecuado del equipo", "correcta": true },
+      { "texto": "Posicionar al paciente boca abajo, suspender la ingesta oral, administrar antieméticos y antihistamínicos", "correcta": false },
+      { "texto": "Valorar nivel de conciencia, temperatura axilar, presión intracraneal y saturación venosa", "correcta": false },
+      { "texto": "Solicitar radiografía de control, análisis hematológico, cultivo de la punta del catéter y ecografía venosa", "correcta": false }
+    ]
+  }
+]
