@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "pregunta": "1. ¿Qué es el cateterismo vesical y en qué situaciones está indicado?",
+    "opciones": [
+      { "texto": "Procedimiento para drenar orina de la vejiga, indicado en retención urinaria, monitoreo de diuresis y drenaje postoperatorio", "correcta": true },
+      { "texto": "Técnica para irrigar la vejiga con antibióticos, indicada solo en infecciones crónicas", "correcta": false },
+      { "texto": "Procedimiento quirúrgico para ampliar la uretra, indicado en estenosis severas", "correcta": false },
+      { "texto": "Método para administrar medicamentos directamente al riñón, indicado en insuficiencia renal", "correcta": false }
+    ]
+  },
+  {
+    "id": 2,
+    "pregunta": "2. Menciona tres tipos de catéteres urinarios y sus principales características",
+    "opciones": [
+      { "texto": "Catéter de Foley: uso prolongado con globo inflable; Catéter intermitente: uso temporal; Catéter de tres vías: para irrigación continua", "correcta": true },
+      { "texto": "Catéter renal: conexión directa al riñón; Catéter vesical: conexión a vejiga; Catéter uretral: solo para hombres", "correcta": false },
+      { "texto": "Catéter metálico: para usos permanentes; Catéter de silicona: solo para mujeres; Catéter pediátrico: con sistema de calefacción", "correcta": false },
+      { "texto": "Catéter autoadhesivo: sin sistema de fijación; Catéter biodegradable: se disuelve en 48 horas; Catéter magnético: controlado externamente", "correcta": false }
+    ]
+  },
+  {
+    "id": 3,
+    "pregunta": "3. ¿Cuál es la diferencia entre un cateterismo vesical intermitente y uno permanente?",
+    "opciones": [
+      { "texto": "El intermitente se retira tras vaciar la vejiga, mientras que el permanente queda fijado con un balón por períodos prolongados", "correcta": true },
+      { "texto": "El intermitente se usa solo en mujeres, mientras que el permanente es exclusivo para hombres", "correcta": false },
+      { "texto": "El intermitente se conecta a una bolsa externa, mientras el permanente drena internamente a la uretra", "correcta": false },
+      { "texto": "El intermitente necesita cirugía para su colocación, mientras que el permanente se inserta sin anestesia", "correcta": false }
+    ]
+  },
+  {
+    "id": 4,
+    "pregunta": "4. Enumera al menos tres contraindicaciones del cateterismo vesical",
+    "opciones": [
+      { "texto": "Trauma uretral, infección urinaria activa y estenosis uretral severa", "correcta": true },
+      { "texto": "Diabetes, hipertensión arterial y obesidad", "correcta": false },
+      { "texto": "Edad avanzada, género masculino y bajo nivel educativo", "correcta": false },
+      { "texto": "Alergia a antibióticos, enfermedad hepática y embarazo", "correcta": false }
+    ]
+  },
+  {
+    "id": 5,
+    "pregunta": "5. ¿Cuáles son los principales riesgos y complicaciones asociados al cateterismo vesical?",
+    "opciones": [
+      { "texto": "Infecciones urinarias, lesión uretral, espasmos vesicales, hematuria y formación de cálculos", "correcta": true },
+      { "texto": "Gangrena genital, necrosis renal y perforación intestinal", "correcta": false },
+      { "texto": "Impotencia permanente, esterilidad y cambios en la coloración de la piel", "correcta": false },
+      { "texto": "Aumento de peso, hipertensión pulmonar y deterioro cognitivo", "correcta": false }
+    ]
+  },
+  {
+    "id": 6,
+    "pregunta": "6. ¿Cuáles son los materiales esenciales para realizar un cateterismo vesical en un paciente masculino?",
+    "opciones": [
+      { "texto": "Guantes estériles, antiséptico, gasas estériles, jeringa, lubricante, sonda vesical y sistema de drenaje", "correcta": true },
+      { "texto": "Bisturí, anestesia local, sutura, grapadora quirúrgica y vendas elásticas", "correcta": false },
+      { "texto": "Ecógrafo portátil, agujas de biopsia y kit de dilatación uretral", "correcta": false },
+      { "texto": "Pinzas de sujeción, tijeras quirúrgicas, catgut y antibióticos intravenosos", "correcta": false }
+    ]
+  },
+  {
+    "id": 7,
+    "pregunta": "7. Explica brevemente los pasos para realizar un cateterismo vesical en una paciente femenina",
+    "opciones": [
+      { "texto": "Higiene de manos, antisepsia perineal, lubricación del catéter, inserción hasta ver orina, inflado del balón y conexión al drenaje", "correcta": true },
+      { "texto": "Colocación en posición prono, sedación, incisión suprapúbica, inserción directa a vejiga y cierre quirúrgico", "correcta": false },
+      { "texto": "Dilatación forzada de la uretra, inserción sin lubricante, fijación con puntos de sutura y vendaje compresivo", "correcta": false },
+      { "texto": "Administración de anestesia general, inserción por vía vaginal, inflado máximo del balón y cambio diario del catéter", "correcta": false }
+    ]
+  },
+  {
+    "id": 8,
+    "pregunta": "8. ¿Por qué es importante utilizar una técnica estéril al realizar un cateterismo vesical?",
+    "opciones": [
+      { "texto": "Para prevenir infecciones del tracto urinario, reducir contaminación bacteriana y evitar complicaciones como sepsis", "correcta": true },
+      { "texto": "Para evitar manchas en la ropa del paciente y facilitar la visualización del procedimiento", "correcta": false },
+      { "texto": "Únicamente por requisitos administrativos hospitalarios y para cumplir con protocolos", "correcta": false },
+      { "texto": "Para incrementar el costo del procedimiento y justificar el uso de materiales desechables", "correcta": false }
+    ]
+  },
+  {
+    "id": 9,
+    "pregunta": "9. ¿Qué medidas se deben tomar para evitar infecciones asociadas al uso de catéteres urinarios?",
+    "opciones": [
+      { "texto": "Técnica estéril, higiene diaria del meato, sistema de drenaje cerrado, evitar manipulación innecesaria y retiro temprano", "correcta": true },
+      { "texto": "Cambio del catéter cada 24 horas y administración continua de antibióticos profilácticos", "correcta": false },
+      { "texto": "Restringir la ingesta de líquidos y acidificar la orina con suplementos de vitamina C", "correcta": false },
+      { "texto": "Pinzar la sonda regularmente para fortalecer la vejiga y aplicar antisépticos dentro del catéter", "correcta": false }
+    ]
+  },
+  {
+    "id": 10,
+    "pregunta": "10. ¿Cómo se mide el volumen residual urinario mediante cateterismo vesical?",
+    "opciones": [
+      { "texto": "Realizando un cateterismo postmiccional y midiendo la cantidad de orina drenada, siendo significativo un volumen mayor a 100 ml", "correcta": true },
+      { "texto": "Pesando al paciente antes y después de orinar para calcular la diferencia en gramos", "correcta": false },
+      { "texto": "Inyectando un colorante en la vejiga y midiendo su dilución en sangre periférica", "correcta": false },
+      { "texto": "Aplicando presión abdominal y midiendo la fuerza del chorro urinario con un flujómetro", "correcta": false }
+    ]
+  },
+  {
+    "id": 11,
+    "pregunta": "11. ¿Cuáles son los signos y síntomas de una infección del tracto urinario en un paciente con sonda vesical?",
+    "opciones": [
+      { "texto": "Fiebre, disuria, orina turbia o con mal olor, hematuria, dolor suprapúbico y cambios en el estado mental", "correcta": true },
+      { "texto": "Pérdida de peso, diarrea crónica y dolor en las articulaciones", "correcta": false },
+      { "texto": "Tos persistente, congestión nasal y erupciones cutáneas", "correcta": false },
+      { "texto": "Hipertensión, edema facial y visión borrosa", "correcta": false }
+    ]
+  },
+  {
+    "id": 12,
+    "pregunta": "12. ¿Qué recomendaciones debe recibir un paciente con catéter urinario de larga duración para prevenir complicaciones?",
+    "opciones": [
+      { "texto": "Mantener buena higiene, evitar tirones, mantener el sistema por debajo de la vejiga, hidratarse bien y acudir a controles médicos", "correcta": true },
+      { "texto": "Suspender toda actividad física y permanecer en cama la mayor parte del tiempo", "correcta": false },
+      { "texto": "Evitar el consumo de agua después de las 6 pm y desconectar la bolsa durante la noche", "correcta": false },
+      { "texto": "Cambiar el catéter en casa cada semana y utilizar antibióticos sin prescripción ante cualquier molestia", "correcta": false }
+    ]
+  },
+  {
+    "id": 13,
+    "pregunta": "13. ¿Cómo se debe realizar el retiro seguro de una sonda vesical permanente?",
+    "opciones": [
+      { "texto": "Higiene de manos, desinflado del balón con jeringa, retirada suave y vigilancia posterior de la diuresis", "correcta": true },
+      { "texto": "Cortar la sonda al nivel del meato y esperar a que se expulse naturalmente", "correcta": false },
+      { "texto": "Tirar con fuerza del catéter sin desinflar el balón para evitar contaminación", "correcta": false },
+      { "texto": "Llenar la vejiga con antibióticos antes de retirar la sonda para prevenir infecciones", "correcta": false }
+    ]
+  },
+  {
+    "id": 14,
+    "pregunta": "14. ¿Qué papel tiene la enfermería en la educación del paciente y su familia sobre el manejo del catéter urinario en casa?",
+    "opciones": [
+      { "texto": "Explicar técnicas de higiene, enseñar a reconocer signos de infección, instruir sobre el manejo del sistema y cuándo buscar ayuda médica", "correcta": true },
+      { "texto": "Delegar todo el cuidado a la familia sin ofrecer capacitación específica", "correcta": false },
+      { "texto": "Indicar que el paciente debe evitar el contacto social mientras use catéter", "correcta": false },
+      { "texto": "Recomendar la automedicación con antibióticos ante cualquier cambio en el color de la orina", "correcta": false }
+    ]
+  },
+  {
+    "id": 15,
+    "pregunta": "15. En un paciente con retención urinaria, ¿cómo se determina la necesidad de realizar un cateterismo vesical?",
+    "opciones": [
+      { "texto": "Evaluando signos como distensión abdominal, dolor suprapúbico, ausencia de micción y mediante ecografía vesical", "correcta": true },
+      { "texto": "Únicamente por la edad del paciente, siendo obligatorio en mayores de 65 años", "correcta": false },
+      { "texto": "Midiendo la temperatura corporal y aplicando presión en puntos específicos del abdomen", "correcta": false },
+      { "texto": "Realizando un análisis de sangre para determinar niveles de urea y creatinina en el momento", "correcta": false }
+    ]
+  }
+]
