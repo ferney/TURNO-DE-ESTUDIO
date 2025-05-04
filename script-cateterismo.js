@@ -20,7 +20,7 @@ const returnButton = document.getElementById('return-button');
 // Carga el archivo JSON de preguntas
 async function cargarPreguntas() {
     try {
-        const response = await fetch('../json/preguntas-cateterismo.json');
+        const response = await fetch('json/preguntas-cateterismo.json');
         if (!response.ok) {
             throw new Error('Error al cargar las preguntas');
         }
