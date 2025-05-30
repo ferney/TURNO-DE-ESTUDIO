@@ -21,7 +21,7 @@ const returnButton = document.getElementById('return-button');
 async function cargarPreguntas() {
     try {
 
-        const response = await fetch('/json/preguntas-sondaje.json');
+        const response = await fetch('json/preguntas-sondaje.json');
 
         if (!response.ok) {
             throw new Error('Error al cargar las preguntas');
